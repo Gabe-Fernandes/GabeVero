@@ -1,3 +1,21 @@
-* {
-    color: green;
+@font-face {
+    font-family: GabeVero;
+    src: url("/Le Jour Serif.ttf") format("truetype"),
+        url("/LeJourSerif-OVZMo.otf"),
+        url('/LeJourSerif-OVZMo.woff') format('woff');
+}
+
+.content-wrap {
+    color: #3d402f;
+    margin: 50vh auto 0vh auto;
+    text-align: center;
+    font-family: "GabeVero";
+}
+
+img {
+    width: 68rem;
+    height: 51rem;
+    position: absolute;
+    left: 0%;
+    top: 0%;
 }
