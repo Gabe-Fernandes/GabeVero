@@ -54,8 +54,9 @@ html {
 .section-container {
   width: 100%;
   transition: opacity 0.4s;
-  height: 2vh;
-  background-color: green;
+  margin: 4vh 0vw 8vh;
+  position: absolute;
+  left: 0%;
 }
 
 .nature-img {
@@ -98,4 +99,29 @@ html {
 
 .hidden {
   opacity: 0%;
+}
+
+#container0 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10%;
+  margin: 0% auto;
+  text-align: center;
+}
+#container0 div h1 {
+  font-weight: 100;
+  margin: 0vh 0vw 2vh;
+  font-size: 2rem;
+}
+#container0 div .home-underline {
+  background-color: black;
+  width: 90%;
+  height: 0.2vh;
+  border-radius: 10%;
+}
+
+#container6 {
+  text-align: center;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=index.css.map */
