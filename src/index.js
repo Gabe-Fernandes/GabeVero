@@ -1,7 +1,3 @@
-// Font from save the date: "Le Jour Serif"
-
-
-
 // Countdown Feature
 const currentDate = new Date();
 const weddingDate = new Date("2026-08-16");
