@@ -25,6 +25,8 @@ html {
         letter-spacing: 3px;
     }
     nav {
+        display: flex;
+        justify-content: center;
         margin-top: 8vh;
         .btn {
             font-size: 15px;
@@ -32,12 +34,28 @@ html {
             color: #3A3A3A;
             letter-spacing: 2px;
         }
+        .nav-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .nav-underline {
+                background-color: black;
+                width: 90%;
+                height: 0.2vh;
+                border-radius: 10%;
+                opacity: 0%;
+                transition: opacity 0.5s;
+            }
+        }
     }
 }
 
 .nature-img {
-    width: 84rem;
-    height: 63rem;
+    //width: 84rem;
+    //height: 63rem;
+    width: 72vw;
+    height: 54vw;
     position: absolute;
     left: 0%;
     top: 0%;
