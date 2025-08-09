@@ -48,8 +48,14 @@ html {
   width: 90%;
   height: 0.2vh;
   border-radius: 10%;
-  opacity: 0%;
   transition: opacity 0.5s;
+}
+
+.section-container {
+  width: 100%;
+  transition: opacity 0.4s;
+  height: 2vh;
+  background-color: green;
 }
 
 .nature-img {
@@ -88,4 +94,8 @@ html {
   border: none;
   font-size: 1.1rem;
   box-shadow: none;
+}
+
+.hidden {
+  opacity: 0%;
 }/*# sourceMappingURL=index.css.map */

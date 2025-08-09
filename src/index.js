@@ -7,9 +7,19 @@ $("#countDown").html(`${daysToGo} DAYS TO GO!`);
 // Navbar Underline
 $(".nav-wrap .btn").hover(
     function(event) {
-        $(event.target).siblings(".nav-underline").css("opacity", "100%");
+        $(event.target).siblings(".nav-underline").removeClass("hidden");
     },
     function(event) {
-        $(event.target).siblings(".nav-underline").css("opacity", "0%");
+        const containerId = $(event.target).attr("data-containerId");
+        if ($(`#container${containerId}`).hasClass("hidden")) {
+            $(event.target).siblings(".nav-underline").addClass("hidden");
+        }
     }
 );
+
+// Navigate Between Sections
+$(".nav-wrap .btn").on("click", (event) => {
+    $(".section-container, .nav-underline").addClass("hidden");
+    const containerId = $(event.target).attr("data-containerId");
+    $(`#container${containerId}, #navUnderline${containerId}`).removeClass("hidden");
+});
