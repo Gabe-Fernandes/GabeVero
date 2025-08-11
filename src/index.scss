@@ -53,13 +53,11 @@ html {
     width: 100%;
     transition: opacity 0.4s;
     margin: 4vh 0vw 8vh;
-    position: absolute;
-    left: 0%;
+    //position: absolute;
+    //left: 0%;
 }
 
 .nature-img {
-    //width: 84rem;
-    //height: 63rem;
     width: 72vw;
     height: 54vw;
     position: absolute;
@@ -81,11 +79,6 @@ html {
 .btn:hover {
     filter: brightness(120%);
 }
-.btn:active {
-    transform: scale(0.94);
-    transform: translateY(5%);
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
 .text-btn {
     cursor: pointer;
     background: none;
@@ -95,27 +88,39 @@ html {
 }
 .hidden {
     opacity: 0%;
+    height: 0;
+    * {
+        height: 0;
+    }
+}
+
+.logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    margin: 5vh auto;
+    text-align: center;
+    h1 {
+        font-weight: 100;
+        margin: 0vh 0vw 2vh;
+        font-size: 2rem;
+    }
+    .home-underline {
+        background-color: black;
+        width: 90%;
+        height: 0.2vh;
+        border-radius: 10%;
+    }
 }
 
 #container0 {
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 10%;
-        margin: 0% auto;
-        text-align: center;
-        h1 {
-            font-weight: 100;
-            margin: 0vh 0vw 2vh;
-            font-size: 2rem;
-        }
-        .home-underline {
-            background-color: black;
-            width: 90%;
-            height: 0.2vh;
-            border-radius: 10%;
-        }
+    display: flex;
+    justify-content: center;
+    img {
+        width: 20vw;
+        height: 50vh;
+        border-radius: 1%;
     }
 }
 #container1 {
@@ -135,5 +140,7 @@ html {
 }
 #container6 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 12vh;
 }
