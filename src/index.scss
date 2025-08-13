@@ -5,6 +5,10 @@
 html {
     background-color: #fafaf8;
     overflow-x: hidden;
+    font-family: "Gilda Display", sans-serif;
+    button {
+        font-family: "Gilda Display", sans-serif;
+    }
 }
 .content-wrap {
     color: #3d402f;
@@ -86,6 +90,7 @@ html {
     width: 0%;
     height: 0%;
     * {
+        display: none;
         width: 0% !important;
         height: 0% !important;
     }
@@ -116,16 +121,6 @@ html {
     justify-content: center;
     align-items: center;
     margin-top: 4vh;
-    .section-container {
-        //width: 100%;
-        //transition: opacity 0.4s, width 0.4s, height 0.4s;
-        * {
-            //transition: width 0.5s, height 0.5s;
-        }
-        //margin: 4vh 0vw 8vh;
-        //position: absolute;
-        //left: 0%;
-    }
 }
 
 #container0 {
@@ -147,9 +142,32 @@ html {
 
 }
 #container4 {
-    .qa-link {
-        cursor: pointer;
-        color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .qa-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: #3a3a3a;
+        letter-spacing: 3px;
+        margin-top: 4vh;
+        width: 40%;
+        .question {
+            text-transform: uppercase;
+            margin: 0% auto;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .answer {
+            margin: 2vh 0vw 6vh;
+        }
+        .qa-link {
+            cursor: pointer;
+            color: blue;
+        }
     }
 }
 #container5 {

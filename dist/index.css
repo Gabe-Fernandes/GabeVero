@@ -5,10 +5,6 @@
 html {
   background-color: #fafaf8;
   overflow-x: hidden;
-  font-family: "Gilda Display", sans-serif;
-}
-html button {
-  font-family: "Gilda Display", sans-serif;
 }
 
 .content-wrap {
@@ -95,7 +91,6 @@ html button {
   height: 0%;
 }
 .hidden * {
-  display: none;
   width: 0% !important;
   height: 0% !important;
 }
@@ -126,7 +121,6 @@ html button {
   align-items: center;
   margin-top: 4vh;
 }
-
 #container0 {
   display: flex;
   justify-content: center;
@@ -137,32 +131,7 @@ html button {
   border-radius: 1%;
 }
 
-#container4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#container4 .qa-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  color: #3a3a3a;
-  letter-spacing: 3px;
-  margin-top: 4vh;
-  width: 40%;
-}
-#container4 .qa-wrap .question {
-  text-transform: uppercase;
-  margin: 0% auto;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#container4 .qa-wrap .answer {
-  margin: 2vh 0vw 6vh;
-}
-#container4 .qa-wrap .qa-link {
+#container4 .qa-link {
   cursor: pointer;
   color: blue;
 }
