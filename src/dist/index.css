@@ -1,9 +1,5 @@
-/*@font-face {
-    font-family: GabeVero;
-    src: url("/Le\ Jour\ Serif\ Personal\ Use\ Only.otf") format("opentype");
-}*/
 html {
-  background-color: #fafaf8;
+  background-color: #fef8e0;
   overflow-x: hidden;
   font-family: "Gilda Display", sans-serif;
 }
@@ -16,7 +12,6 @@ html button {
   margin: 52vh auto 0vh auto;
   text-align: center;
   font-family: "Gilda Display", sans-serif;
-  background-color: #fafaf8;
   width: 100%;
   height: 100%;
 }
@@ -105,7 +100,7 @@ html button {
   flex-direction: column;
   align-items: center;
   width: 10%;
-  margin: 5vh auto;
+  margin: 5vh auto 20vh;
   text-align: center;
 }
 .logo-wrap h1 {
@@ -118,6 +113,10 @@ html button {
   width: 90%;
   height: 0.2vh;
   border-radius: 10%;
+}
+.logo-wrap span {
+  font-style: italic;
+  margin-top: 2vh;
 }
 
 .section-container-wrap {
@@ -135,6 +134,32 @@ html button {
   width: 40vw;
   height: 30vw;
   border-radius: 1%;
+}
+
+#container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafaf8;
+}
+#container2 #countrySelectWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  box-shadow: 1px 1px 1px 1px #bcaf7e;
+}
+#container2 #countrySelectWrap .country-selection {
+  transition: background-color 0.4s;
+  cursor: default;
+  width: 100%;
+  text-indent: 10%;
+  padding: 0.2rem;
+}
+#container2 #countrySelectWrap .country-selection:hover {
+  background-color: #bcaf7e;
 }
 
 #container4 {

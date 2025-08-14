@@ -22,5 +22,4 @@ $(".nav-wrap .btn, .qa-link").on("click", (event) => {
     $(".section-container, .nav-underline").addClass("hidden");
     const containerId = $(event.target).attr("data-containerId");
     $(`#container${containerId}, #navUnderline${containerId}`).removeClass("hidden");
-    $(".section-container-wrap")[0].scrollIntoView();
 });
