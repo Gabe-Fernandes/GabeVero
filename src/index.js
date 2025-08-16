@@ -23,3 +23,19 @@ $(".nav-wrap .btn, .qa-link").on("click", (event) => {
     const containerId = $(event.target).attr("data-containerId");
     $(`#container${containerId}, #navUnderline${containerId}`).removeClass("hidden");
 });
+
+// Country Selection Dropdown open/close
+$(".selection-header").on("click", ()=> {
+    if ($("#countrySelectionArrow").hasClass("open-dropdown")) {
+        // close dropdown actions
+        $("#countrySelectionArrow").removeClass("open-dropdown");
+        $("#countrySelectWrap").addClass("close-dropdown");
+    }
+    else {
+        // open dropdown actions
+        $("#countrySelectionArrow").addClass("open-dropdown");
+        $("#countrySelectWrap").removeClass("close-dropdown");
+    }
+});
+
+// Country Dropdown selection event

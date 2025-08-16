@@ -79,13 +79,13 @@ html {
     font-size: 1.1rem;
     box-shadow: none;
 }
-.hidden {
+#bodyId .hidden {
     display: none;
     opacity: 0%;
     width: 0%;
     height: 0%;
     * {
-        display: none;
+        display: none !important;
         width: 0% !important;
         height: 0% !important;
     }
@@ -118,7 +118,7 @@ html {
 .section-container-wrap {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 4vh;
 }
 
@@ -132,35 +132,67 @@ html {
     }
 }
 #container1 {
-
+    width: initial;
 }
 #container2 {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #fafaf8;
+    justify-content: flex-start;
     #countrySelectWrap {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 15vw;
+        background-color: #fafaf8;
+        width: 20vw;
+        height: 100%;
+        padding: 0.5rem;
         box-shadow: 1px 1px 1px 1px #bcaf7e;
+        transition: font-size 0.2s, height 0.2s, padding 0.2s;
         .country-selection {
-            transition: background-color 0.4s;
+            transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
             cursor: default;
             width: 100%;
+            height: 100%;
             text-indent: 10%;
             padding: 0.2rem;
         }
         .country-selection:hover {
             background-color: #bcaf7e;
         }
+        .selection-header {
+            cursor: pointer;
+            display: flex;
+            width: 100%;
+            text-indent: 10%;
+            font-size: initial;
+            span {
+                width: 100%;
+            }
+            #countrySelectionArrow {
+                width: 1vw;
+                height: 1vw;
+                transition: transform 0.2s;
+                transform: rotate(180deg);
+            }
+            #countrySelectionArrow.open-dropdown {
+                transform: rotate(90deg);
+            }
+        }
+    }
+    #countrySelectWrap.close-dropdown {
+        .country-selection {
+            font-size: 0px;
+            height: 0px;
+            padding: 0px;
+        }
     }
 }
 #container3 {
-
+    width: initial;
 }
 #container4 {
     display: flex;
@@ -192,7 +224,7 @@ html {
     }
 }
 #container5 {
-
+    width: initial;
 }
 #container6 {
     display: flex;

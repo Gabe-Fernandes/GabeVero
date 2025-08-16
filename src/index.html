@@ -12,7 +12,7 @@
     <title>Document</title>
     <link rel="icon" href="/Nature image rotated.png" type="image/png">
 </head>
-<body>
+<body id="bodyId">
     <img class="nature-img" src="/Nature image rotated.png">
     <div class="content-wrap">
         <h1>GABRIEL & VERONICA</h1>
@@ -50,7 +50,7 @@
         </nav>
     </div>
     <div class="section-container-wrap">
-        <section id="container0" class="section-container hidden">
+        <section id="container0" class="section-container">
             <!--
             <img src="/ringsPictureBlackAndWhite.jpg">
             <img src="/ringsPicture.jpg">
@@ -61,9 +61,9 @@
         <section id="container1" class="section-container hidden">
 
         </section>
-        <section id="container2" class="section-container">
-            <div id="countrySelectWrap">
-                <div class="country-selection">Select Your Country</div>
+        <section id="container2" class="section-container hidden">
+            <div id="countrySelectWrap" class="close-dropdown">
+                <div class="selection-header"><span>Select Your Country</span><img id="countrySelectionArrow" src="/ContextMenuArrow.png"></div>
                 <div class="country-selection">Venezuela</div>
                 <div class="country-selection">Mexico</div>
                 <div class="country-selection">Honduras</div>
