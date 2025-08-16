@@ -160,17 +160,6 @@ html button {
   box-shadow: 1px 1px 1px 1px #bcaf7e;
   transition: font-size 0.2s, height 0.2s, padding 0.2s;
 }
-#container2 #countrySelectWrap .country-selection {
-  transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
-  cursor: default;
-  width: 100%;
-  height: 100%;
-  text-indent: 10%;
-  padding: 0.2rem;
-}
-#container2 #countrySelectWrap .country-selection:hover {
-  background-color: #bcaf7e;
-}
 #container2 #countrySelectWrap .selection-header {
   cursor: pointer;
   display: flex;
@@ -178,8 +167,10 @@ html button {
   text-indent: 10%;
   font-size: initial;
 }
-#container2 #countrySelectWrap .selection-header span {
+#container2 #countrySelectWrap .selection-header #dropdownHeaderText {
+  display: flex;
   width: 100%;
+  white-space: nowrap;
 }
 #container2 #countrySelectWrap .selection-header #countrySelectionArrow {
   width: 1vw;
@@ -190,10 +181,52 @@ html button {
 #container2 #countrySelectWrap .selection-header #countrySelectionArrow.open-dropdown {
   transform: rotate(90deg);
 }
+#container2 #countrySelectWrap .country-selection {
+  display: flex;
+  transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  text-indent: 10%;
+  padding: 0.2rem;
+}
+#container2 #countrySelectWrap .country-selection span {
+  width: 100%;
+  text-indent: 5%;
+}
+#container2 #countrySelectWrap .country-selection * {
+  pointer-events: none;
+}
+#container2 #countrySelectWrap .country-selection:hover {
+  background-color: #bcaf7e;
+}
+#container2 #countrySelectWrap .flag {
+  width: 10%;
+  height: 90%;
+  transition: width 0.2s, height 0.2s;
+}
 #container2 #countrySelectWrap.close-dropdown .country-selection {
   font-size: 0px;
   height: 0px;
   padding: 0px;
+}
+#container2 #countrySelectWrap.close-dropdown .country-selection .flag {
+  width: 0px;
+}
+#container2 .country-info-wrap {
+  display: flex;
+}
+#container2 .country-info-wrap .country-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#container2 .country-info-wrap .country-info ul {
+  width: 40vw;
+}
+#container2 .country-info-wrap .country-info ul li {
+  margin: 2vh 0vw;
+  letter-spacing: 3px;
 }
 
 #container3 {

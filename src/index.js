@@ -30,12 +30,22 @@ $(".selection-header").on("click", ()=> {
         // close dropdown actions
         $("#countrySelectionArrow").removeClass("open-dropdown");
         $("#countrySelectWrap").addClass("close-dropdown");
+        $(".country-info").addClass("hidden");
     }
     else {
         // open dropdown actions
         $("#countrySelectionArrow").addClass("open-dropdown");
         $("#countrySelectWrap").removeClass("close-dropdown");
     }
+    $("#dropdownHeaderText").html("Select Your Country");
 });
 
 // Country Dropdown selection event
+$(".country-selection").on("click", (event) => {
+    const contentId = $(event.target).attr("data-contentId");
+    $("#dropdownHeaderText").html($(event.target).html());
+    $("#countrySelectionArrow").removeClass("open-dropdown");
+    $("#countrySelectWrap").addClass("close-dropdown");
+    $(".country-info").addClass("hidden");
+    $(`#countryInfo${contentId}`).removeClass("hidden");
+});

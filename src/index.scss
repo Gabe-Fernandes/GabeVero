@@ -152,25 +152,16 @@ html {
         padding: 0.5rem;
         box-shadow: 1px 1px 1px 1px #bcaf7e;
         transition: font-size 0.2s, height 0.2s, padding 0.2s;
-        .country-selection {
-            transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
-            cursor: default;
-            width: 100%;
-            height: 100%;
-            text-indent: 10%;
-            padding: 0.2rem;
-        }
-        .country-selection:hover {
-            background-color: #bcaf7e;
-        }
         .selection-header {
             cursor: pointer;
             display: flex;
             width: 100%;
             text-indent: 10%;
             font-size: initial;
-            span {
+            #dropdownHeaderText {
+                display: flex;
                 width: 100%;
+                white-space: nowrap;
             }
             #countrySelectionArrow {
                 width: 1vw;
@@ -181,13 +172,55 @@ html {
             #countrySelectionArrow.open-dropdown {
                 transform: rotate(90deg);
             }
+        }        
+        .country-selection {
+            display: flex;
+            transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
+            cursor: default;
+            width: 100%;
+            height: 100%;
+            text-indent: 10%;
+            padding: 0.2rem;
+            span {
+                width: 100%;
+                text-indent: 5%;
+            }
+            * {
+                pointer-events: none;
+            }
         }
+        .country-selection:hover {
+            background-color: #bcaf7e;
+        }
+        .flag {
+            width: 10%;
+            height: 90%;
+            transition: width 0.2s, height 0.2s;
+        }        
     }
     #countrySelectWrap.close-dropdown {
         .country-selection {
             font-size: 0px;
             height: 0px;
             padding: 0px;
+            .flag {
+                width: 0px;
+            }
+        }
+    }
+    .country-info-wrap {
+        display: flex;
+        .country-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            ul {
+                width: 40vw;
+                li {
+                    margin: 2vh 0vw;
+                    letter-spacing: 3px;
+                }
+            }
         }
     }
 }

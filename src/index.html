@@ -62,13 +62,65 @@
 
         </section>
         <section id="container2" class="section-container hidden">
+            <h2>Do I need a visa?</h2>
             <div id="countrySelectWrap" class="close-dropdown">
-                <div class="selection-header"><span>Select Your Country</span><img id="countrySelectionArrow" src="/ContextMenuArrow.png"></div>
-                <div class="country-selection">Venezuela</div>
-                <div class="country-selection">Mexico</div>
-                <div class="country-selection">Honduras</div>
-                <div class="country-selection">United States</div>
-                <div class="country-selection">India</div>
+                <div class="selection-header">
+                    <span id="dropdownHeaderText">Select Your Country</span>
+                    <img id="countrySelectionArrow" src="/ContextMenuArrow.png">
+                </div>
+                <div class="country-selection" data-contentId="0">
+                    <img class="flag" src="/Flags/venezuela.png">
+                    <span>Venezuela</span>
+                </div>
+                <div class="country-selection" data-contentId="1">
+                    <img class="flag" src="/Flags/mexico.png">
+                    <span>Mexico</span>
+                </div>
+                <div class="country-selection" data-contentId="2">
+                    <img class="flag" src="/Flags/honduras.png">
+                    <span>Honduras</span>
+                </div>
+                <div class="country-selection" data-contentId="3">
+                    <img class="flag" src="/Flags/us.png">
+                    <span>United States</span>
+                </div>
+                <div class="country-selection" data-contentId="4">
+                    <img class="flag" src="/Flags/india.png">
+                    <span>India</span>
+                </div>
+            </div>
+
+            <div class="country-info-wrap">
+                <div id="countryInfo0" class="country-info hidden">
+                    <ul>
+                        <li>No, unless you're spending more than 60 days in Brazil within a year.</li>
+                        <li><a target="_blank" href="https://www.gov.br/mre/pt-br/consulado-atlanta/english/visas/visa-requirements-by-country">You can read more about it here.</a></li>
+                    </ul>
+                </div>
+                <div id="countryInfo1" class="country-info hidden">                    
+                    <ul>
+                        <li>No, unless you're spending more than 90 days in Brazil within a year.</li>
+                        <li><a target="_blank" href="https://www.gov.br/mre/pt-br/consulado-atlanta/english/visas/visa-requirements-by-country">You can read more about it here.</a></li>
+                    </ul>
+                </div>
+                <div id="countryInfo2" class="country-info hidden">
+                    <ul>
+                        <li>No, unless you’re spending more than 90 days in Brazil within a year.</li>
+                        <li><a target="_blank" href="https://www.gov.br/mre/pt-br/consulado-atlanta/english/visas/visa-requirements-by-country">You can read more about it here.</a></li>
+                    </ul>
+                </div>
+                <div id="countryInfo3" class="country-info hidden">
+                    <ul>
+                        <li>Yes, you need a visa to enter Brazil. You can apply online <a target="_blank" href="https://brazil.vfsevisa.com/">here</a> and bring the printed pdf visa with you to the airport.</li>
+                        <li>According to <a target="_blank" href="https://www.gov.br/mre/pt-br/consulado-atlanta/english/visas/visa-requirements-by-country">their website</a>, it takes at least 10 business days to process the visa so make sure to apply early enough.</li>
+                    </ul>                
+                </div>
+                <div id="countryInfo4" class="country-info hidden">
+                    <ul>
+                        <li>Yes, you need the VIVIS visa to enter Brazil.</li>
+                        <li>Here's a helpful <a target="_blank" href="https://www.reddit.com/r/Brazil/comments/1m3pxob/indian_applying_for_brazil_tourist_visa_from_usa/ ">reddit thread</a>.</li>
+                    </ul>                
+                </div>
             </div>
         </section>
         <section id="container3" class="section-container hidden">
