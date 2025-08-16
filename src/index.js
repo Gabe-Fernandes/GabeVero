@@ -22,6 +22,7 @@ $(".nav-wrap .btn, .qa-link").on("click", (event) => {
     $(".section-container, .nav-underline").addClass("hidden");
     const containerId = $(event.target).attr("data-containerId");
     $(`#container${containerId}, #navUnderline${containerId}`).removeClass("hidden");
+    $(".qa-wrap").css("opacity", "0%");
 });
 
 // Country Selection Dropdown open/close
@@ -48,4 +49,17 @@ $(".country-selection").on("click", (event) => {
     $("#countrySelectWrap").addClass("close-dropdown");
     $(".country-info").addClass("hidden");
     $(`#countryInfo${contentId}`).removeClass("hidden");
+});
+
+// Q&A fade in effect
+$(window).scroll( function(){
+    // Check the location of each desired element
+    $('.qa-wrap').each( function(i){
+        const bottomOfObject = $(this).position().top + $(this).outerHeight();
+        const bottomOfWindow = $(window).scrollTop() + $(window).height();
+        // If the object is completely visible in the window, fade it in
+        if( bottomOfWindow > bottomOfObject ){
+            $(this).css("opacity", "100%");
+        }    
+    }); 
 });

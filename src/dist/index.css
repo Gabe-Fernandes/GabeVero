@@ -248,6 +248,8 @@ html button {
   letter-spacing: 3px;
   margin-top: 4vh;
   width: 40%;
+  opacity: 0%;
+  transition: opacity 1s;
 }
 #container4 .qa-wrap .question {
   text-transform: uppercase;
