@@ -156,11 +156,12 @@ html button {
   background-color: #fafaf8;
   width: 20vw;
   height: 100%;
-  padding: 0.5rem;
+  padding: 0rem 0.5rem;
   box-shadow: 1px 1px 1px 1px #bcaf7e;
   transition: font-size 0.2s, height 0.2s, padding 0.2s;
 }
 #container2 #countrySelectWrap .selection-header {
+  padding: 0.5rem;
   cursor: pointer;
   display: flex;
   width: 100%;
