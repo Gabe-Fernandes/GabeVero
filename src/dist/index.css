@@ -137,10 +137,6 @@ html button {
 }
 
 #container1 {
-  width: initial;
-}
-
-#container2 {
   width: 100%;
   height: 100%;
   display: flex;
@@ -148,7 +144,7 @@ html button {
   align-items: center;
   justify-content: flex-start;
 }
-#container2 #countrySelectWrap {
+#container1 #countrySelectWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,7 +156,7 @@ html button {
   box-shadow: 1px 1px 1px 1px #bcaf7e;
   transition: font-size 0.2s, height 0.2s, padding 0.2s;
 }
-#container2 #countrySelectWrap .selection-header {
+#container1 #countrySelectWrap .selection-header {
   padding: 0.5rem;
   cursor: pointer;
   display: flex;
@@ -168,21 +164,21 @@ html button {
   text-indent: 10%;
   font-size: initial;
 }
-#container2 #countrySelectWrap .selection-header #dropdownHeaderText {
+#container1 #countrySelectWrap .selection-header #dropdownHeaderText {
   display: flex;
   width: 100%;
   white-space: nowrap;
 }
-#container2 #countrySelectWrap .selection-header #countrySelectionArrow {
+#container1 #countrySelectWrap .selection-header #countrySelectionArrow {
   width: 1vw;
   height: 1vw;
   transition: transform 0.2s;
-  transform: rotate(180deg);
-}
-#container2 #countrySelectWrap .selection-header #countrySelectionArrow.open-dropdown {
   transform: rotate(90deg);
 }
-#container2 #countrySelectWrap .country-selection {
+#container1 #countrySelectWrap .selection-header #countrySelectionArrow.open-dropdown {
+  transform: rotate(180deg);
+}
+#container1 #countrySelectWrap .country-selection {
   display: flex;
   transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
   cursor: default;
@@ -191,55 +187,62 @@ html button {
   text-indent: 10%;
   padding: 0.2rem;
 }
-#container2 #countrySelectWrap .country-selection span {
+#container1 #countrySelectWrap .country-selection span {
   width: 100%;
   text-indent: 5%;
 }
-#container2 #countrySelectWrap .country-selection * {
+#container1 #countrySelectWrap .country-selection * {
   pointer-events: none;
 }
-#container2 #countrySelectWrap .country-selection:hover {
+#container1 #countrySelectWrap .country-selection:hover {
   background-color: #bcaf7e;
 }
-#container2 #countrySelectWrap .flag {
+#container1 #countrySelectWrap .flag {
   width: 10%;
   height: 90%;
   transition: width 0.2s, height 0.2s;
 }
-#container2 #countrySelectWrap.close-dropdown .country-selection {
+#container1 #countrySelectWrap.close-dropdown .country-selection {
   font-size: 0px;
   height: 0px;
   padding: 0px;
 }
-#container2 #countrySelectWrap.close-dropdown .country-selection .flag {
+#container1 #countrySelectWrap.close-dropdown .country-selection .flag {
   width: 0px;
 }
-#container2 .country-info-wrap {
+#container1 .country-info-wrap {
   display: flex;
 }
-#container2 .country-info-wrap .country-info {
+#container1 .country-info-wrap .country-info {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#container2 .country-info-wrap .country-info ul {
+#container1 .country-info-wrap .country-info ul {
   width: 40vw;
 }
-#container2 .country-info-wrap .country-info ul li {
+#container1 .country-info-wrap .country-info ul li {
   margin: 2vh 0vw;
   letter-spacing: 3px;
 }
+#container1 .question {
+  text-transform: uppercase;
+  margin: 4vh auto;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
 
-#container3 {
+#container2 {
   width: initial;
 }
 
-#container4 {
+#container3 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#container4 .qa-wrap {
+#container3 .qa-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -251,31 +254,31 @@ html button {
   opacity: 0%;
   transition: opacity 1s;
 }
-#container4 .qa-wrap .question {
+#container3 .qa-wrap .question {
   text-transform: uppercase;
   margin: 0% auto;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 500;
 }
-#container4 .qa-wrap .answer {
+#container3 .qa-wrap .answer {
   margin: 2vh 0vw 6vh;
 }
-#container4 .qa-wrap .qa-link {
+#container3 .qa-wrap .qa-link {
   cursor: pointer;
   color: blue;
 }
 
-#container5 {
+#container4 {
   width: initial;
 }
 
-#container6 {
+#container5 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#container6 span {
+#container5 span {
   margin: 6vh 0vw;
   font-size: 1.2rem;
   font-style: italic;

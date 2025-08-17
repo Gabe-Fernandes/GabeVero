@@ -22,7 +22,7 @@ $(".nav-wrap .btn, .qa-link").on("click", (event) => {
     $(".section-container, .nav-underline").addClass("hidden");
     const containerId = $(event.target).attr("data-containerId");
     $(`#container${containerId}, #navUnderline${containerId}`).removeClass("hidden");
-    $(".qa-wrap").css("opacity", "0%");
+    $(".qa-wrap").css("opacity", "0%"); $(".always-show").css("opacity", "100%");
 });
 
 // Country Selection Dropdown open/close

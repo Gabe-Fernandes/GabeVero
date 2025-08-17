@@ -122,6 +122,7 @@ html {
     margin-top: 4vh;
 }
 
+// Itenerary
 #container0 {
     display: flex;
     justify-content: center;
@@ -131,10 +132,8 @@ html {
         border-radius: 1%;
     }
 }
+// Travel Guide
 #container1 {
-    width: initial;
-}
-#container2 {
     width: 100%;
     height: 100%;
     display: flex;
@@ -168,10 +167,10 @@ html {
                 width: 1vw;
                 height: 1vw;
                 transition: transform 0.2s;
-                transform: rotate(180deg);
+                transform: rotate(90deg);
             }
             #countrySelectionArrow.open-dropdown {
-                transform: rotate(90deg);
+                transform: rotate(180deg);
             }
         }
         .country-selection {
@@ -224,11 +223,20 @@ html {
             }
         }
     }
+    .question {
+        text-transform: uppercase;
+        margin: 4vh auto;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }    
 }
-#container3 {
+// Things to Do
+#container2 {
     width: initial;
 }
-#container4 {
+// Q & A
+#container3 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -259,10 +267,12 @@ html {
         }
     }
 }
-#container5 {
+// RSVP
+#container4 {
     width: initial;
 }
-#container6 {
+// Registry
+#container5 {
     display: flex;
     justify-content: center;
     align-items: center;

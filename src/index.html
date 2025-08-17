@@ -24,32 +24,30 @@
                 <div id="navUnderline0" class="nav-underline"></div>
             </div>
             <div class="nav-wrap">
-                <button class="btn text-btn" data-containerId="1">Itenerary</button>
+                <button class="btn text-btn" data-containerId="1">Travel Guide</button>
                 <div id="navUnderline1" class="nav-underline hidden"></div>
             </div>
             <div class="nav-wrap">
-                <button class="btn text-btn" data-containerId="2">Travel Guide</button>
+                <button class="btn text-btn" data-containerId="2">Things To Do</button>
                 <div id="navUnderline2" class="nav-underline hidden"></div>
             </div>
             <div class="nav-wrap">
-                <button class="btn text-btn" data-containerId="3">Things To Do</button>
+                <button class="btn text-btn" data-containerId="3">Q & A</button>
                 <div id="navUnderline3" class="nav-underline hidden"></div>
             </div>
             <div class="nav-wrap">
-                <button class="btn text-btn" data-containerId="4">Q & A</button>
+                <button class="btn text-btn" data-containerId="4">RSVP</button>
                 <div id="navUnderline4" class="nav-underline hidden"></div>
             </div>
             <div class="nav-wrap">
-                <button class="btn text-btn" data-containerId="5">RSVP</button>
+                <button class="btn text-btn" data-containerId="5">Registry</button>
                 <div id="navUnderline5" class="nav-underline hidden"></div>
-            </div>
-            <div class="nav-wrap">
-                <button class="btn text-btn" data-containerId="6">Registry</button>
-                <div id="navUnderline6" class="nav-underline hidden"></div>
             </div>
         </nav>
     </div>
+
     <div class="section-container-wrap">
+        <!--Itenerary-->
         <section id="container0" class="section-container">
             <!--
             <img src="/ringsPictureBlackAndWhite.jpg">
@@ -58,15 +56,13 @@
             -->
             <img src="/happyPicture.jpg">
         </section>
+        <!--Travel Guide-->
         <section id="container1" class="section-container hidden">
-
-        </section>
-        <section id="container2" class="section-container hidden">
-            <h2>Do I need a visa?</h2>
+            <span class="question">Visa Requirements</span>
             <div id="countrySelectWrap" class="close-dropdown">
                 <div class="selection-header">
                     <span id="dropdownHeaderText">Select Your Country</span>
-                    <img id="countrySelectionArrow" src="/ContextMenuArrow.png">
+                    <img tabindex="0" id="countrySelectionArrow" src="/ContextMenuArrow.png">
                 </div>
                 <div class="country-selection" data-contentId="0">
                     <img class="flag" src="/Flags/venezuela.png">
@@ -112,7 +108,7 @@
                 <div id="countryInfo3" class="country-info hidden">
                     <ul>
                         <li>Yes, you need a visa to enter Brazil. You can apply online <a target="_blank" href="https://brazil.vfsevisa.com/">here</a> and bring the printed pdf visa with you to the airport.</li>
-                        <li>According to <a target="_blank" href="https://www.gov.br/mre/pt-br/consulado-atlanta/english/visas/visa-requirements-by-country">their website</a>, it takes at least 10 business days to process the visa so make sure to apply early enough.</li>
+                        <li>According to <a target="_blank" href="https://brazil.vfsevisa.com/information">their website</a>, it takes at least 10 business days to process the visa so make sure to apply early enough.</li>
                     </ul>                
                 </div>
                 <div id="countryInfo4" class="country-info hidden">
@@ -123,11 +119,13 @@
                 </div>
             </div>
         </section>
-        <section id="container3" class="section-container hidden">
+        <!--Things to Do-->
+        <section id="container2" class="section-container hidden">
 
         </section>
-        <section id="container4" class="section-container hidden">
-            <div class="qa-wrap">
+        <!--Q & A-->
+        <section id="container3" class="section-container hidden">
+            <div class="qa-wrap always-show" style="opacity: 100%">
                 <span class="question">Will the event be indoors or outdoors?</span>
                 <span class="answer">Both the ceremony and reception will be outdoors, weather permitting.</span>
             </div>
@@ -156,10 +154,12 @@
                 <span class="answer">The wedding will take place in an eco resort which can accommodate all our guests. No need for designated drivers &#128540;. Please refer to the <span class="qa-link" data-containerId="2">Travel</span> section.</span>
             </div>
         </section>
-        <section id="container5" class="section-container hidden">
+        <!--RSVP-->
+        <section id="container4" class="section-container hidden">
 
         </section>
-        <section id="container6" class="section-container hidden">
+        <!--Registry-->
+        <section id="container5" class="section-container hidden">
             <span>We kindly request no gifts for our wedding. Celebrating with you is what we care about most!</span>
         </section>
     </div>
