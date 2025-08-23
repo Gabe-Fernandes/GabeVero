@@ -102,6 +102,7 @@ html {
         font-weight: 100;
         margin: 0vh 0vw 2vh;
         font-size: 2rem;
+        white-space: nowrap;
     }
     .home-underline {
         background-color: black;
@@ -269,7 +270,51 @@ html {
 }
 // RSVP
 #container4 {
-    width: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    .slideshow-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        position: relative;
+        transition: height 2s, width 2s;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            transition: width 0.5s, opacity 0.5s;
+        }
+        .slideshow-shrink {
+            width: 0% !important;
+            pointer-events: none;
+            opacity: 0%;
+        }
+        .slideshow-btn {
+            //@include Img-Round(4rem);
+            width: 4rem;
+            height: 4rem;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .slideshow-left {
+            transform: translate(-50%, -50%) rotate(180deg);
+            left: 3%;
+        }
+        .slideshow-right {
+            right: 3%;
+        }
+    }
 }
 // Registry
 #container5 {

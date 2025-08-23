@@ -107,6 +107,7 @@ html button {
   font-weight: 100;
   margin: 0vh 0vw 2vh;
   font-size: 2rem;
+  white-space: nowrap;
 }
 .logo-wrap .home-underline {
   background-color: black;
@@ -270,7 +271,50 @@ html button {
 }
 
 #container4 {
-  width: initial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#container4 .slideshow-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+  position: relative;
+  transition: height 2s, width 2s;
+}
+#container4 .slideshow-wrap div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: width 0.5s, opacity 0.5s;
+}
+#container4 .slideshow-wrap .slideshow-shrink {
+  width: 0% !important;
+  pointer-events: none;
+  opacity: 0%;
+}
+#container4 .slideshow-wrap .slideshow-btn {
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#container4 .slideshow-wrap .slideshow-left {
+  transform: translate(-50%, -50%) rotate(180deg);
+  left: 3%;
+}
+#container4 .slideshow-wrap .slideshow-right {
+  right: 3%;
 }
 
 #container5 {

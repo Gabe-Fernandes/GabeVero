@@ -63,3 +63,36 @@ $(window).scroll( function(){
         }    
     }); 
 });
+
+// RSVP Slideshow
+function createSlideShow(namespace) {
+    const lastPage = $(`.${namespace}`).length;
+    const slideshowWrap = $(`#${namespace}SlideshowWrap`);
+
+    slideshowWrap.children(".slideshow-left:first").on("click", ()=> {
+        let currentPage = parseInt(slideshowWrap.attr("data-page"));
+        if (currentPage > 1) {
+        $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
+        currentPage--;
+        slideshowWrap.attr("data-page", currentPage);
+        $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
+        }
+    });
+    slideshowWrap.children(".slideshow-right:first").on("click", ()=> {
+        let currentPage = parseInt(slideshowWrap.attr("data-page"));
+        if (currentPage < lastPage) {
+        $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
+        currentPage++;
+        slideshowWrap.attr("data-page", currentPage);
+        $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
+        }
+    });
+    slideshowWrap.children(".slideshow-btn").on("click", ()=> {
+        let currentPage = parseInt(slideshowWrap.attr("data-page"));
+        $(`#${namespace}SlideshowCounter`).html(`Showing (${currentPage} of ${lastPage})`);
+    });
+
+    // init counter
+    $(`#${namespace}SlideshowCounter`).html(`Showing (1 of ${lastPage})`);
+}
+createSlideShow("test");
