@@ -51,7 +51,7 @@ $(".country-selection").on("click", (event) => {
     $(`#countryInfo${contentId}`).removeClass("hidden");
 });
 
-// Q&A fade in effect
+// Q & A fade in effect
 $(window).scroll( function(){
     // Check the location of each desired element
     $('.qa-wrap').each( function(i){
