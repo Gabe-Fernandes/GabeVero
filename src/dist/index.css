@@ -29,6 +29,9 @@ html button {
 .content-wrap nav {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
   margin-top: 8vh;
 }
 .content-wrap nav .btn {
@@ -42,6 +45,8 @@ html button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: initial;
+  height: initial;
 }
 .content-wrap nav .nav-wrap .nav-underline {
   background-color: black;
@@ -99,7 +104,9 @@ html button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 10%;
+  height: initial;
   margin: 5vh auto 20vh;
   text-align: center;
 }
@@ -124,12 +131,17 @@ html button {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  width: initial;
+  height: initial;
   margin-top: 4vh;
 }
 
 #container0 {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
 }
 #container0 img {
   width: 40vw;
@@ -138,36 +150,42 @@ html button {
 }
 
 #container1 {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
+  height: 100%;
 }
 #container1 #countrySelectWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fafaf8;
   width: 20vw;
   height: 100%;
+  background-color: #fafaf8;
   padding: 0rem 0.5rem;
   box-shadow: 1px 1px 1px 1px #bcaf7e;
   transition: font-size 0.2s, height 0.2s, padding 0.2s;
 }
 #container1 #countrySelectWrap .selection-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: initial;
   padding: 0.5rem;
   cursor: pointer;
-  display: flex;
-  width: 100%;
   text-indent: 10%;
   font-size: initial;
 }
 #container1 #countrySelectWrap .selection-header #dropdownHeaderText {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: initial;
   white-space: nowrap;
 }
 #container1 #countrySelectWrap .selection-header #countrySelectionArrow {
@@ -181,10 +199,12 @@ html button {
 }
 #container1 #countrySelectWrap .country-selection {
   display: flex;
-  transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
-  cursor: default;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+  transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
+  cursor: default;
   text-indent: 10%;
   padding: 0.2rem;
 }
@@ -218,6 +238,9 @@ html button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: initial;
+  height: initial;
 }
 #container1 .country-info-wrap .country-info ul {
   width: 40vw;
@@ -242,16 +265,20 @@ html button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: initial;
+  height: initial;
 }
 #container3 .qa-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  width: 40%;
+  height: initial;
   color: #3a3a3a;
   letter-spacing: 3px;
   margin-top: 4vh;
-  width: 40%;
   opacity: 0%;
   transition: opacity 1s;
 }
@@ -324,12 +351,15 @@ html button {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  height: initial;
 }
 
 #container5 {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: initial;
+  height: initial;
 }
 #container5 span {
   margin: 6vh 0vw;

@@ -1,3 +1,22 @@
+@mixin WidthHeight($w, $h) {
+  width: $w;
+  height: $h;
+}
+@mixin Flex-Row($justify, $align, $width: 100%, $height: 100%) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  width: $width;
+  height: $height;
+}
+@mixin Flex-Col($align, $justify, $width: 100%, $height: 100%) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+  width: $width;
+  height: $height;
+}
 html {
     background-color: #fef8e0;
     overflow-x: hidden;
@@ -11,8 +30,7 @@ html {
     margin: 52vh auto 0vh auto;
     text-align: center;
     font-family: "Gilda Display", sans-serif;
-    width: 100%;
-    height: 100%;
+    @include WidthHeight(100%, 100%);
     h1 {
         font-size: 3.9rem;
         font-weight: 100;
@@ -25,8 +43,7 @@ html {
         letter-spacing: 3px;
     }
     nav {
-        display: flex;
-        justify-content: center;
+        @include Flex-Row(center, center, initial, initial);
         margin-top: 8vh;
         .btn {
             font-size: 15px;
@@ -35,14 +52,10 @@ html {
             letter-spacing: 2px;
         }
         .nav-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            @include Flex-Col(center, center, initial, initial);
             .nav-underline {
                 background-color: black;
-                width: 90%;
-                height: 0.2vh;
+                @include WidthHeight(90%, 0.2vh);
                 border-radius: 10%;
                 transition: opacity 0.5s;
             }
@@ -51,8 +64,7 @@ html {
 }
 
 .nature-img {
-    width: 72vw;
-    height: 54vw;
+    @include WidthHeight(72vw, 54vw);
     position: absolute;
     left: 0%;
     top: 0%;
@@ -82,8 +94,7 @@ html {
 #bodyId .hidden {
     display: none;
     opacity: 0%;
-    width: 0%;
-    height: 0%;
+    @include WidthHeight(0%, 0%);
     * {
         display: none !important;
         width: 0% !important;
@@ -92,10 +103,7 @@ html {
 }
 
 .logo-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 10%;
+    @include Flex-Col(center, center, 10%, initial);
     margin: 5vh auto 20vh;
     text-align: center;
     h1 {
@@ -106,8 +114,7 @@ html {
     }
     .home-underline {
         background-color: black;
-        width: 90%;
-        height: 0.2vh;
+        @include WidthHeight(90%, 0.2vh);
         border-radius: 10%;
     }
     span {
@@ -117,56 +124,39 @@ html {
 }
 
 .section-container-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    @include Flex-Row(center, flex-start, initial, initial);
     margin-top: 4vh;
 }
 
 // Itenerary
 #container0 {
-    display: flex;
-    justify-content: center;
+    @include Flex-Row(center, center, initial, initial);
     img {
-        width: 40vw;
-        height: 30vw;
+        @include WidthHeight(40vw, 30vw);
         border-radius: 1%;
     }
 }
 // Travel Guide
 #container1 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    @include Flex-Col(center, flex-start, 100%, 100%);
     #countrySelectWrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        @include Flex-Col(center, center, 20vw, 100%);
         background-color: #fafaf8;
-        width: 20vw;
-        height: 100%;
         padding: 0rem 0.5rem;
         box-shadow: 1px 1px 1px 1px #bcaf7e;
         transition: font-size 0.2s, height 0.2s, padding 0.2s;
         .selection-header {
+            @include Flex-Row(center, center, 100%, initial);
             padding: 0.5rem;
             cursor: pointer;
-            display: flex;
-            width: 100%;
             text-indent: 10%;
             font-size: initial;
             #dropdownHeaderText {
-                display: flex;
-                width: 100%;
+                @include Flex-Row(center, center, 100%, initial);
                 white-space: nowrap;
             }
             #countrySelectionArrow {
-                width: 1vw;
-                height: 1vw;
+                @include WidthHeight(1vw, 1vw);
                 transition: transform 0.2s;
                 transform: rotate(90deg);
             }
@@ -175,11 +165,9 @@ html {
             }
         }
         .country-selection {
-            display: flex;
+            @include Flex-Row(center, center, 100%, 100%);
             transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
             cursor: default;
-            width: 100%;
-            height: 100%;
             text-indent: 10%;
             padding: 0.2rem;
             span {
@@ -194,8 +182,7 @@ html {
             background-color: #bcaf7e;
         }
         .flag {
-            width: 10%;
-            height: 90%;
+            @include WidthHeight(10%, 90%);
             transition: width 0.2s, height 0.2s;
         }        
     }
@@ -212,9 +199,7 @@ html {
     .country-info-wrap {
         display: flex;
         .country-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include Flex-Col(center, center, initial, initial);
             ul {
                 width: 40vw;
                 li {
@@ -238,18 +223,12 @@ html {
 }
 // Q & A
 #container3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include Flex-Col(center, center, initial, initial);
     .qa-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
+        @include Flex-Col(flex-start, center, 40%, initial);
         color: #3a3a3a;
         letter-spacing: 3px;
         margin-top: 4vh;
-        width: 40%;
         opacity: 0%;
         transition: opacity 1s;
         .question {
@@ -270,27 +249,13 @@ html {
 }
 // RSVP
 #container4 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    @include Flex-Col(center, center, 100%, 100%);
     .slideshow-wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 90%;
+        @include Flex-Row(center, center, 100%, 90%);
         position: relative;
         transition: height 2s, width 2s;
         .test {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 50%;
-            height: 100%;
+            @include Flex-Col(center, center, 50%, 100%);
             transition: width 0.5s, opacity 0.5s;
         }
         .slideshow-shrink {
@@ -299,9 +264,7 @@ html {
             opacity: 0%;
         }
         .slideshow-btn {
-            //@include Img-Round(4rem);
-            width: 4rem;
-            height: 4rem;
+            @include WidthHeight(4rem, 4rem);
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -319,17 +282,12 @@ html {
         background-color: pink;
     }
     .check-wrap {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
+        @include Flex-Row(flex-start, center, 100%, initial);
     }
 }
 // Registry
 #container5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include Flex-Row(center, center, initial, initial);
     span {
         margin: 6vh 0vw;
         font-size: 1.2rem;
