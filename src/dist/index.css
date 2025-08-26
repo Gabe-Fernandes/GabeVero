@@ -287,12 +287,12 @@ html button {
   position: relative;
   transition: height 2s, width 2s;
 }
-#container4 .slideshow-wrap div {
+#container4 .slideshow-wrap .test {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 50%;
   height: 100%;
   transition: width 0.5s, opacity 0.5s;
 }
@@ -315,6 +315,15 @@ html button {
 }
 #container4 .slideshow-wrap .slideshow-right {
   right: 3%;
+}
+#container4 .rsvp-name {
+  background-color: pink;
+}
+#container4 .check-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 #container5 {

@@ -96,3 +96,23 @@ function createSlideShow(namespace) {
     $(`#${namespace}SlideshowCounter`).html(`Showing (1 of ${lastPage})`);
 }
 createSlideShow("test");
+
+// RSVP Name Search
+$("#nameSearch").on("input", ()=> {
+    const searchText = $("#nameSearch").val().toLowerCase();
+    if (searchText === "" || searchText === " ") { $(".rsvp-name,#noResultsMessage").addClass("hidden"); return; }
+    const names = $(".rsvp-name");
+    for (let i = 0; i < names.length; i++) {
+        if (names.eq(i).html().toLowerCase().includes(searchText)) {
+            names.eq(i).removeClass("hidden");
+        } else {
+            names.eq(i).addClass("hidden");
+        }
+    }
+    if ($(".rsvp-name.hidden").length === $(".rsvp-name").length) {
+        $("#noResultsMessage").html(`No results found for "${searchText}"`);
+        $("#noResultsMessage").removeClass("hidden");
+    } else {
+        $("#noResultsMessage").addClass("hidden");
+    }
+});

@@ -179,7 +179,13 @@
             <span id="testSlideshowCounter"></span>
             <div id="testSlideshowWrap" class="slideshow-wrap" data-page="1">
                 <div id="testSlideshow1" class="search-container test">
-                    <input type="text" placeholder="search your name">
+                    <input type="text" id="nameSearch" placeholder="search your name">
+                    <div class="hidden rsvp-name">Mafe Fuenmayor</div>
+                    <div class="hidden rsvp-name">Dario Fuenmayor</div>
+                    <div class="hidden rsvp-name">João Vieira Sampaio</div>
+                    <div class="hidden rsvp-name">Pedro Valim Sampaio</div>
+                    <div class="hidden rsvp-name">Joana Valim Sampaio</div>
+                    <span id="noResultsMessage" class="hidden"></span>
                 </div>
 
                 <div id="testSlideshow2" class="invitation-container test slideshow-shrink">
@@ -187,7 +193,19 @@
                 </div>
 
                 <div id="testSlideshow3" class="rsvp-container test slideshow-shrink">
-                    <span>RSVP Test</span>
+                    <span class="question">Will you be attending?</span>
+                    <div class="check-wrap">
+                        <input type="checkbox">
+                        <label>Yes!</label>
+                    </div>
+                    <div class="check-wrap">
+                        <input type="checkbox">
+                        <label>Sorry, can't come</label>
+                    </div>
+                    <span class="question">Any dietary restrictions?</span>
+                    <input type="text" placeholder="dietary restrictions">
+                    <span class="question">Suggest a song that will bring you to the dance floor:</span>
+                    <input type="text" placeholder="song">
                 </div>
 
                 <img tabindex="0" class="slideshow-btn slideshow-left" src="/ContextMenuArrow.png" />
