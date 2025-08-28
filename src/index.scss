@@ -289,10 +289,16 @@ html {
         transition: font-size 0.2s, height 0.2s, padding 0.2s;
         border-radius: 1%;
         .selection-header {
-            @include Flex-Row(center, center, 100%, initial);
+            @include Flex-Row(flex-start, center, 100%, initial);
             padding: 0.5rem;
             text-indent: 10%;
             font-size: initial;
+            #nameSearch {
+                width: 100%;
+                border: none;
+                background-color: #fafaf8;
+                outline: none;
+            }
         }
         .rsvp-name {
             @include Flex-Row(center, center, 100%, 100%);

@@ -360,13 +360,19 @@ html button {
 }
 #container4 #nameSelectWrap .selection-header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: initial;
   padding: 0.5rem;
   text-indent: 10%;
   font-size: initial;
+}
+#container4 #nameSelectWrap .selection-header #nameSearch {
+  width: 100%;
+  border: none;
+  background-color: #fafaf8;
+  outline: none;
 }
 #container4 #nameSelectWrap .rsvp-name {
   display: flex;
