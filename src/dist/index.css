@@ -89,10 +89,11 @@ html button {
 }
 
 #bodyId .hidden {
-  display: none;
-  opacity: 0%;
   width: 0%;
   height: 0%;
+  display: none;
+  opacity: 0%;
+  padding: 0% !important;
 }
 #bodyId .hidden * {
   display: none !important;
@@ -308,13 +309,14 @@ html button {
 #container4 .slideshow-wrap {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   height: 90%;
   position: relative;
   transition: height 2s, width 2s;
+  margin-top: 5%;
 }
-#container4 .slideshow-wrap .test {
+#container4 .slideshow-wrap .rsvp {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -343,8 +345,51 @@ html button {
 #container4 .slideshow-wrap .slideshow-right {
   right: 3%;
 }
-#container4 .rsvp-name {
-  background-color: pink;
+#container4 #nameSelectWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 100%;
+  background-color: #fafaf8;
+  padding: 0rem 0.5rem;
+  box-shadow: 1px 1px 1px 1px #bcaf7e;
+  transition: font-size 0.2s, height 0.2s, padding 0.2s;
+  border-radius: 1%;
+}
+#container4 #nameSelectWrap .selection-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: initial;
+  padding: 0.5rem;
+  text-indent: 10%;
+  font-size: initial;
+}
+#container4 #nameSelectWrap .rsvp-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.4s, font-size 0.2s, height 0.2s, padding 0.2s;
+  cursor: pointer;
+  text-indent: 10%;
+  padding: 0.2rem;
+}
+#container4 #nameSelectWrap .rsvp-name span {
+  width: 100%;
+  text-indent: 5%;
+}
+#container4 #nameSelectWrap .rsvp-name:hover {
+  background-color: #bcaf7e;
+}
+#container4 #nameSelectWrap.close-dropdown .country-selection {
+  font-size: 0px;
+  height: 0px;
+  padding: 0px;
 }
 #container4 .check-wrap {
   display: flex;

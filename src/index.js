@@ -95,7 +95,7 @@ function createSlideShow(namespace) {
     // init counter
     $(`#${namespace}SlideshowCounter`).html(`Showing (1 of ${lastPage})`);
 }
-createSlideShow("test");
+createSlideShow("rsvp");
 
 // RSVP Name Search
 $("#nameSearch").on("input", ()=> {
