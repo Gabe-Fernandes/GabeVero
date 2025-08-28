@@ -152,7 +152,7 @@ html {
             text-indent: 10%;
             font-size: initial;
             #dropdownHeaderText {
-                @include Flex-Row(center, center, 100%, initial);
+                @include Flex-Row(flex-start, center, 100%, initial);
                 white-space: nowrap;
             }
             #countrySelectionArrow {

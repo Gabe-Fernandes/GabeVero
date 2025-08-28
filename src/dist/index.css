@@ -182,7 +182,7 @@ html button {
 }
 #container1 #countrySelectWrap .selection-header #dropdownHeaderText {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: initial;
