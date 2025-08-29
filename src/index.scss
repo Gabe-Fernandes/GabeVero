@@ -265,6 +265,7 @@ html {
             pointer-events: none;
             opacity: 0%;
         }
+        /*
         .slideshow-btn {
             @include WidthHeight(4rem, 4rem);
             cursor: pointer;
@@ -278,7 +279,7 @@ html {
         }
         .slideshow-right {
             right: 3%;
-        }
+        }*/
     }
 
     #nameSelectWrap {
@@ -309,6 +310,7 @@ html {
             span {
                 width: 100%;
                 text-indent: 5%;
+                pointer-events: none;
             }
         }
         .rsvp-name:hover {

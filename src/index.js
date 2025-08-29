@@ -1,8 +1,11 @@
 // Countdown Feature
-const currentDate = new Date();
-const weddingDate = new Date("2026-08-16");
-const daysToGo = Math.round((weddingDate.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24));
-$("#countDown").html(`${daysToGo} DAYS TO GO!`);
+function weddingCountdown() {
+    const currentDate = new Date();
+    const weddingDate = new Date("2026-08-16");
+    const daysToGo = Math.round((weddingDate.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24));
+    $("#countDown").html(`${daysToGo} DAYS TO GO!`);
+}
+weddingCountdown();
 
 // Navbar Underline
 $(".nav-wrap .btn").hover(
@@ -69,7 +72,7 @@ function createSlideShow(namespace) {
     const lastPage = $(`.${namespace}`).length;
     const slideshowWrap = $(`#${namespace}SlideshowWrap`);
 
-    slideshowWrap.children(".slideshow-left:first").on("click", ()=> {
+    slideshowWrap.find(".slideshow-left").on("click", ()=> {
         let currentPage = parseInt(slideshowWrap.attr("data-page"));
         if (currentPage > 1) {
         $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
@@ -78,7 +81,7 @@ function createSlideShow(namespace) {
         $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
         }
     });
-    slideshowWrap.children(".slideshow-right:first").on("click", ()=> {
+    slideshowWrap.find(".slideshow-right").on("click", ()=> {
         let currentPage = parseInt(slideshowWrap.attr("data-page"));
         if (currentPage < lastPage) {
         $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
@@ -87,7 +90,7 @@ function createSlideShow(namespace) {
         $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
         }
     });
-    slideshowWrap.children(".slideshow-btn").on("click", ()=> {
+    slideshowWrap.find(".slideshow-btn").on("click", ()=> {
         let currentPage = parseInt(slideshowWrap.attr("data-page"));
         $(`#${namespace}SlideshowCounter`).html(`Showing (${currentPage} of ${lastPage})`);
     });
@@ -114,5 +117,20 @@ $("#nameSearch").on("input", ()=> {
         $("#noResultsMessage").removeClass("hidden");
     } else {
         $("#noResultsMessage").addClass("hidden");
+    }
+});
+
+// RSVP Pull Up Invitation
+$(".rsvp-name").on("click", (event) => {
+    const familyName = $(event.target).attr("data-fam");
+    const familyMembers = $(`.${familyName}`);
+    for (let i = 0; i < familyMembers.length; i++) {
+        const name = familyMembers.eq(i).html();
+        $("#invitationWrap").append(`
+            <div class="invitation-name">
+                <input type="checkbox">
+                <span>${name}</span>
+            </div>
+        `);
     }
 });

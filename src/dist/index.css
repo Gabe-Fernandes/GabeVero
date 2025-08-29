@@ -315,6 +315,21 @@ html button {
   position: relative;
   transition: height 2s, width 2s;
   margin-top: 5%;
+  /*
+  .slideshow-btn {
+      @include WidthHeight(4rem, 4rem);
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+  }
+  .slideshow-left {
+      transform: translate(-50%, -50%) rotate(180deg);
+      left: 3%;
+  }
+  .slideshow-right {
+      right: 3%;
+  }*/
 }
 #container4 .slideshow-wrap .rsvp {
   display: flex;
@@ -329,21 +344,6 @@ html button {
   width: 0% !important;
   pointer-events: none;
   opacity: 0%;
-}
-#container4 .slideshow-wrap .slideshow-btn {
-  width: 4rem;
-  height: 4rem;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-#container4 .slideshow-wrap .slideshow-left {
-  transform: translate(-50%, -50%) rotate(180deg);
-  left: 3%;
-}
-#container4 .slideshow-wrap .slideshow-right {
-  right: 3%;
 }
 #container4 #nameSelectWrap {
   display: flex;
@@ -388,6 +388,7 @@ html button {
 #container4 #nameSelectWrap .rsvp-name span {
   width: 100%;
   text-indent: 5%;
+  pointer-events: none;
 }
 #container4 #nameSelectWrap .rsvp-name:hover {
   background-color: #bcaf7e;
