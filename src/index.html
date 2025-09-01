@@ -209,29 +209,33 @@
 
                 <div id="rsvpSlideshow2" class="invitation-container rsvp slideshow-shrink">
                     <span class="rsvp-for-title">RSVP For:</span>
-                    <div id="invitationWrap">
+                    <div id="invitationContainer">
 
                     </div>
                     <div class="btn-wrap">
-                        <button id="backToSearchBtn" class="btn slideshow-left">Back to Search</button>
-                        <button class="btn slideshow-right">Continue</button>
+                        <button type="button" id="backToSearchBtn" class="btn slideshow-left">Back to Search</button>
+                        <button type="button" class="btn slideshow-right">Continue</button>
                     </div>
                 </div>
 
                 <div id="rsvpSlideshow3" class="rsvp-container rsvp slideshow-shrink">
                     <span class="question">Will you be attending?</span>
                     <div class="check-wrap">
-                        <input type="checkbox">
+                        <input type="checkbox" class="rsvp-survey-checkbox">
                         <label>Yes!</label>
                     </div>
                     <div class="check-wrap">
-                        <input type="checkbox">
+                        <input type="checkbox" class="rsvp-survey-checkbox">
                         <label>Sorry, can't come.</label>
                     </div>
                     <span class="question">Any dietary restrictions?</span>
-                    <input type="text" placeholder="dietary restrictions">
+                    <input type="text" class="rsvp-survey-textbox" placeholder="dietary restrictions">
                     <span class="question">Suggest a song that will bring you to the dance floor:</span>
-                    <input type="text" placeholder="song">
+                    <input type="text" class="rsvp-survey-textbox" placeholder="song">
+                    <div class="btn-wrap">
+                        <button type="button" id="backToInvitationBtn" class="btn slideshow-left">Back to Invitation</button>
+                        <button type="submit" class="btn slideshow-right">Submit</button>
+                    </div>
                 </div>
             </div>
         </section>

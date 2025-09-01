@@ -321,7 +321,6 @@ html button {
   height: 90%;
   position: relative;
   transition: width 0.6s, height 0.6s, opacity 0.6s, padding 0.6s, font-size 0.6s;
-  margin-top: 5%;
 }
 #container4 .slideshow-wrap * {
   transition: width 0.6s, height 0.6s, opacity 0.6s, padding 0.6s, font-size 0.6s;
@@ -333,20 +332,6 @@ html button {
   justify-content: center;
   width: 50%;
   height: 100%;
-}
-#container4 .slideshow-wrap .rsvp .rsvp-for-title {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#container4 .slideshow-wrap .rsvp #invitationWrap {
-  margin: 4vh 0vw;
-}
-#container4 .slideshow-wrap .rsvp #invitationWrap .invitation-name {
-  margin: 1vh 0vw;
-}
-#container4 .slideshow-wrap .rsvp .btn-wrap button {
-  margin: 0vh 2vw;
 }
 #container4 .slideshow-wrap .slideshow-shrink {
   width: 0% !important;
@@ -364,7 +349,7 @@ html button {
   opacity: 0% !important;
   padding: 0% !important;
 }
-#container4 #nameSelectWrap {
+#container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -377,7 +362,7 @@ html button {
   transition: font-size 0.2s, height 0.2s, padding 0.2s;
   border-radius: 1%;
 }
-#container4 #nameSelectWrap .selection-header {
+#container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap .selection-header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -387,13 +372,13 @@ html button {
   text-indent: 10%;
   font-size: initial;
 }
-#container4 #nameSelectWrap .selection-header #nameSearch {
+#container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap .selection-header #nameSearch {
   width: 100%;
   border: none;
   background-color: #fafaf8;
   outline: none;
 }
-#container4 #nameSelectWrap .rsvp-name {
+#container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap .rsvp-name {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -404,25 +389,81 @@ html button {
   text-indent: 10%;
   padding: 0.2rem;
 }
-#container4 #nameSelectWrap .rsvp-name span {
+#container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap .rsvp-name span {
   width: 100%;
   text-indent: 5%;
   pointer-events: none;
 }
-#container4 #nameSelectWrap .rsvp-name:hover {
+#container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap .rsvp-name:hover {
   background-color: #bcaf7e;
 }
-#container4 #nameSelectWrap .hide-name {
+#container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap .hide-name {
   font-size: 0px;
   height: 0px;
   padding: 0px;
 }
-#container4 .check-wrap {
+#container4 .slideshow-wrap #rsvpSlideshow2 .rsvp-for-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+#container4 .slideshow-wrap #rsvpSlideshow2 #invitationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: initial;
+  height: initial;
+  margin: 4vh 0vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow2 #invitationContainer .invitation-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
+  margin: 1vh 0vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow2 #invitationContainer .invitation-wrap .invitation-checkbox {
+  width: 2vw;
+  height: 2vw;
+  margin-right: 1vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow2 .btn-wrap button {
+  margin: 0vh 2vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .question {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 3vh 0vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .check-wrap {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: initial;
+  margin-left: 45vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .check-wrap .rsvp-survey-checkbox {
+  width: 2vw;
+  height: 2vw;
+  background: #fafaf8;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .rsvp-survey-textbox {
+  width: 10vw;
+  height: 4vh;
+  text-indent: 5%;
+  border-radius: 5%;
+  border: none;
+  background: #fafaf8;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .btn-wrap {
+  margin-top: 5vh;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .btn-wrap button {
+  margin: 0vh 2vw;
 }
 
 #container5 {

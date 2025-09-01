@@ -123,9 +123,9 @@ function pullUpInvitation(familyName) {
     const familyMembers = $(`.${familyName}`);
     for (let i = 0; i < familyMembers.length; i++) {
         const name = familyMembers.eq(i).html();
-        $("#invitationWrap").append(`
-            <div class="invitation-name">
-                <input type="checkbox">
+        $("#invitationContainer").append(`
+            <div class="invitation-wrap">
+                <input type="checkbox" class="invitation-checkbox">
                 <span>${name}</span>
             </div>
         `);
@@ -150,5 +150,5 @@ $("#backToSearchBtn").on("click", ()=> {
     $("#nameSearch").val("");
     $(".rsvp-name").addClass("hide-name");
     $("#nameSearch")[0].focus();
-    $("#invitationWrap").empty();
+    $("#invitationContainer").empty();
 })
