@@ -25,23 +25,23 @@
             </div>
             <div class="nav-wrap">
                 <button class="btn text-btn" data-containerId="1">Travel Guide</button>
-                <div id="navUnderline1" class="nav-underline hidden"></div>
+                <div id="navUnderline1" class="nav-underline hidden-with-display"></div>
             </div>
             <div class="nav-wrap">
                 <button class="btn text-btn" data-containerId="2">Things To Do</button>
-                <div id="navUnderline2" class="nav-underline hidden"></div>
+                <div id="navUnderline2" class="nav-underline hidden-with-display"></div>
             </div>
             <div class="nav-wrap">
                 <button class="btn text-btn" data-containerId="3">Q & A</button>
-                <div id="navUnderline3" class="nav-underline hidden"></div>
+                <div id="navUnderline3" class="nav-underline hidden-with-display"></div>
             </div>
             <div class="nav-wrap">
                 <button class="btn text-btn" data-containerId="4">RSVP</button>
-                <div id="navUnderline4" class="nav-underline hidden"></div>
+                <div id="navUnderline4" class="nav-underline hidden-with-display"></div>
             </div>
             <div class="nav-wrap">
                 <button class="btn text-btn" data-containerId="5">Registry</button>
-                <div id="navUnderline5" class="nav-underline hidden"></div>
+                <div id="navUnderline5" class="nav-underline hidden-with-display"></div>
             </div>
         </nav>
     </div>
@@ -176,47 +176,45 @@
         </section>
         <!--RSVP-->
         <section id="container4" class="section-container hidden">
-            <span id="rsvpSlideshowCounter"></span>
             <div id="rsvpSlideshowWrap" class="slideshow-wrap" data-page="1">
                 <div id="rsvpSlideshow1" class="search-container rsvp">
-                    
-                    <div id="nameSelectWrap" class="close-dropdown">
+                    <div id="nameSelectWrap">
                         <div class="selection-header">
                             <input type="text" id="nameSearch" autocomplete="off" placeholder="search your name">
                         </div>
-                        <div class="hidden rsvp-name slideshow-btn slideshow-right dario-fuenmayor" data-fam="dario-fuenmayor">
+                        <div tabindex="0" class="hide-name rsvp-name slideshow-right dario-fuenmayor" data-fam="dario-fuenmayor">
                             <span>Mafe Fuenmayor</span>
                         </div>
-                        <div class="hidden rsvp-name slideshow-btn slideshow-right dario-fuenmayor" data-fam="dario-fuenmayor">
+                        <div tabindex="0" class="hide-name rsvp-name slideshow-right dario-fuenmayor" data-fam="dario-fuenmayor">
                             <span>Dario Fuenmayor</span>
                         </div>
-                        <div class="hidden rsvp-name slideshow-btn slideshow-right sampaio" data-fam="sampaio">
+                        <div tabindex="0" class="hide-name rsvp-name slideshow-right sampaio" data-fam="sampaio">
                             <span>João Vieira Sampaio</span>
                         </div>
-                        <div class="hidden rsvp-name slideshow-btn slideshow-right sampaio" data-fam="sampaio">
+                        <div tabindex="0" class="hide-name rsvp-name slideshow-right sampaio" data-fam="sampaio">
                             <span>Elsa Vieira Sampaio</span>
                         </div>
-                        <div class="hidden rsvp-name slideshow-btn slideshow-right sampaio" data-fam="sampaio">
+                        <div tabindex="0" class="hide-name rsvp-name slideshow-right sampaio" data-fam="sampaio">
                             <span>Pedro Valim Sampaio</span>
                         </div>
-                        <div class="hidden rsvp-name slideshow-btn slideshow-right sampaio" data-fam="sampaio">
+                        <div tabindex="0" class="hide-name rsvp-name slideshow-right sampaio" data-fam="sampaio">
                             <span>Joana Valim Sampaio</span>
                         </div>
-                        <div class="hidden rsvp-name slideshow-btn slideshow-right vero" data-fam="vero">
+                        <div tabindex="0" class="hide-name rsvp-name slideshow-right vero" data-fam="vero">
                             <span>VERONICA GRATEROL</span>
-                        </div>                        
-                        <span id="noResultsMessage" class="hidden"></span>
+                        </div>                   
+                        <span id="noResultsMessage" class="hide-name"></span>
                     </div>
                 </div>
 
                 <div id="rsvpSlideshow2" class="invitation-container rsvp slideshow-shrink">
-                    <span>RSVP For:</span>
+                    <span class="rsvp-for-title">RSVP For:</span>
                     <div id="invitationWrap">
 
                     </div>
                     <div class="btn-wrap">
-                        <button class="btn">Back</button>
-                        <button class="btn">Next</button>
+                        <button id="backToSearchBtn" class="btn slideshow-left">Back to Search</button>
+                        <button class="btn slideshow-right">Continue</button>
                     </div>
                 </div>
 
@@ -235,11 +233,6 @@
                     <span class="question">Suggest a song that will bring you to the dance floor:</span>
                     <input type="text" placeholder="song">
                 </div>
-
-                <!--
-                <img tabindex="0" class="slideshow-btn slideshow-left" src="/ContextMenuArrow.png" />
-                <img tabindex="0" class="slideshow-btn slideshow-right" src="/ContextMenuArrow.png" />
-                -->
             </div>
         </section>
         <!--Registry-->

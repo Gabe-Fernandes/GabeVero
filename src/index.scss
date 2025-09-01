@@ -77,7 +77,7 @@ html {
     padding: 0.4rem 1rem;
     font-size: 1.1rem;
     border-radius: 1rem;
-    background: green;
+    background: #bcaf7e;
     border-style: unset;
     box-shadow: 1px 2px 1px 1px black;
 }
@@ -101,6 +101,11 @@ html {
         width: 0% !important;
         height: 0% !important;
     }
+}
+.hidden-with-display {
+    @include WidthHeight(0%, 0%);
+    opacity: 0%;
+    padding: 0% !important;
 }
 
 .logo-wrap {
@@ -254,32 +259,46 @@ html {
     .slideshow-wrap {
         @include Flex-Row(center, flex-start, 100%, 90%);
         position: relative;
-        transition: height 2s, width 2s;
+        transition: width 0.6s, height 0.6s, opacity 0.6s, padding 0.6s, font-size 0.6s;
         margin-top: 5%;
+        * {
+            transition: width 0.6s, height 0.6s, opacity 0.6s, padding 0.6s, font-size 0.6s;
+        }
         .rsvp {
             @include Flex-Col(center, center, 50%, 100%);
-            transition: width 0.5s, opacity 0.5s;
+            .rsvp-for-title {
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                font-weight: 500;                
+            }
+            #invitationWrap {
+                margin: 4vh 0vw;
+                .invitation-name {
+                    margin: 1vh 0vw;
+                }
+            }
+            .btn-wrap {
+                button {
+                    margin: 0vh 2vw;
+                }
+            }
         }
         .slideshow-shrink {
             width: 0% !important;
+            height: 0% !important;
+            font-size: 0px !important;
             pointer-events: none;
-            opacity: 0%;
+            opacity: 0% !important;
+            padding: 0% !important;
+            * {
+                width: 0% !important;
+                height: 0% !important;
+                font-size: 0px !important;
+                pointer-events: none;
+                opacity: 0% !important;
+                padding: 0% !important;
+            }
         }
-        /*
-        .slideshow-btn {
-            @include WidthHeight(4rem, 4rem);
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .slideshow-left {
-            transform: translate(-50%, -50%) rotate(180deg);
-            left: 3%;
-        }
-        .slideshow-right {
-            right: 3%;
-        }*/
     }
 
     #nameSelectWrap {
@@ -315,15 +334,13 @@ html {
         }
         .rsvp-name:hover {
             background-color: #bcaf7e;
-        }    
-    }
-    #nameSelectWrap.close-dropdown {
-        .country-selection {
+        }
+        .hide-name {
             font-size: 0px;
             height: 0px;
             padding: 0px;
-        }
-    }  
+        } 
+    }
     .check-wrap {
         @include Flex-Row(flex-start, center, 100%, initial);
     }

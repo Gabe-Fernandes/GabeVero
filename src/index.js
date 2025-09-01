@@ -10,22 +10,25 @@ weddingCountdown();
 // Navbar Underline
 $(".nav-wrap .btn").hover(
     function(event) {
-        $(event.target).siblings(".nav-underline").removeClass("hidden");
+        $(event.target).siblings(".nav-underline").removeClass("hidden-with-display");
     },
     function(event) {
         const containerId = $(event.target).attr("data-containerId");
         if ($(`#container${containerId}`).hasClass("hidden")) {
-            $(event.target).siblings(".nav-underline").addClass("hidden");
+            $(event.target).siblings(".nav-underline").addClass("hidden-with-display");
         }
     }
 );
 
 // Navigate Between Sections
 $(".nav-wrap .btn, .qa-link").on("click", (event) => {
-    $(".section-container, .nav-underline").addClass("hidden");
+    $(".section-container").addClass("hidden");
+    $(".nav-underline").addClass("hidden-with-display");
     const containerId = $(event.target).attr("data-containerId");
-    $(`#container${containerId}, #navUnderline${containerId}`).removeClass("hidden");
+    $(`#container${containerId}`).removeClass("hidden");
+    $(`#navUnderline${containerId}`).removeClass("hidden-with-display");
     $(".qa-wrap").css("opacity", "0%"); $(".always-show").css("opacity", "100%");
+    if (containerId === "4") { $("#nameSearch")[0].focus(); }
 });
 
 // Country Selection Dropdown open/close
@@ -75,54 +78,48 @@ function createSlideShow(namespace) {
     slideshowWrap.find(".slideshow-left").on("click", ()=> {
         let currentPage = parseInt(slideshowWrap.attr("data-page"));
         if (currentPage > 1) {
-        $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
-        currentPage--;
-        slideshowWrap.attr("data-page", currentPage);
-        $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
+            $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
+            currentPage--;
+            slideshowWrap.attr("data-page", currentPage);
+            $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
         }
     });
     slideshowWrap.find(".slideshow-right").on("click", ()=> {
         let currentPage = parseInt(slideshowWrap.attr("data-page"));
         if (currentPage < lastPage) {
-        $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
-        currentPage++;
-        slideshowWrap.attr("data-page", currentPage);
-        $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
+            $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
+            currentPage++;
+            slideshowWrap.attr("data-page", currentPage);
+            $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
         }
     });
-    slideshowWrap.find(".slideshow-btn").on("click", ()=> {
-        let currentPage = parseInt(slideshowWrap.attr("data-page"));
-        $(`#${namespace}SlideshowCounter`).html(`Showing (${currentPage} of ${lastPage})`);
-    });
-
-    // init counter
-    $(`#${namespace}SlideshowCounter`).html(`Showing (1 of ${lastPage})`);
 }
 createSlideShow("rsvp");
 
 // RSVP Name Search
 $("#nameSearch").on("input", ()=> {
     const searchText = $("#nameSearch").val().toLowerCase();
-    if (searchText === "" || searchText === " ") { $(".rsvp-name,#noResultsMessage").addClass("hidden"); return; }
+    if (searchText === "" || searchText === " ") { $(".rsvp-name,#noResultsMessage").addClass("hide-name"); $(".rsvp-name").attr("tabindex", -1); return; }
     const names = $(".rsvp-name");
     for (let i = 0; i < names.length; i++) {
         if (names.eq(i).html().toLowerCase().includes(searchText)) {
-            names.eq(i).removeClass("hidden");
+            names.eq(i).removeClass("hide-name");
+            names.eq(i).attr("tabindex", 0);
         } else {
-            names.eq(i).addClass("hidden");
+            names.eq(i).addClass("hide-name");
+            names.eq(i).attr("tabindex", -1);
         }
     }
-    if ($(".rsvp-name.hidden").length === $(".rsvp-name").length) {
+    if ($(".rsvp-name.hide-name").length === $(".rsvp-name").length) {
         $("#noResultsMessage").html(`No results found for "${searchText}"`);
-        $("#noResultsMessage").removeClass("hidden");
+        $("#noResultsMessage").removeClass("hide-name");
     } else {
-        $("#noResultsMessage").addClass("hidden");
+        $("#noResultsMessage").addClass("hide-name");
     }
 });
 
 // RSVP Pull Up Invitation
-$(".rsvp-name").on("click", (event) => {
-    const familyName = $(event.target).attr("data-fam");
+function pullUpInvitation(familyName) {
     const familyMembers = $(`.${familyName}`);
     for (let i = 0; i < familyMembers.length; i++) {
         const name = familyMembers.eq(i).html();
@@ -133,4 +130,25 @@ $(".rsvp-name").on("click", (event) => {
             </div>
         `);
     }
+}
+$(".rsvp-name").on("click", (event) => {
+    pullUpInvitation($(event.target).attr("data-fam"));
 });
+document.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13 && $(":focus").hasClass("rsvp-name")) {
+        console.log($(":focus").attr("data-fam"));
+        pullUpInvitation($(":focus").attr("data-fam"));
+        $(`#rsvpSlideshow1`).addClass("slideshow-shrink");
+        $(`#rsvpSlideshow2`).removeClass("slideshow-shrink");
+        $(`#rsvpSlideshowWrap`).attr("data-page", 2);
+        event.preventDefault();
+    }
+});
+
+// RSVP Back to Search
+$("#backToSearchBtn").on("click", ()=> {
+    $("#nameSearch").val("");
+    $(".rsvp-name").addClass("hide-name");
+    $("#nameSearch")[0].focus();
+    $("#invitationWrap").empty();
+})

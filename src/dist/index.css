@@ -71,7 +71,7 @@ html button {
   padding: 0.4rem 1rem;
   font-size: 1.1rem;
   border-radius: 1rem;
-  background: green;
+  background: #bcaf7e;
   border-style: unset;
   box-shadow: 1px 2px 1px 1px black;
 }
@@ -99,6 +99,13 @@ html button {
   display: none !important;
   width: 0% !important;
   height: 0% !important;
+}
+
+.hidden-with-display {
+  width: 0%;
+  height: 0%;
+  opacity: 0%;
+  padding: 0% !important;
 }
 
 .logo-wrap {
@@ -313,23 +320,11 @@ html button {
   width: 100%;
   height: 90%;
   position: relative;
-  transition: height 2s, width 2s;
+  transition: width 0.6s, height 0.6s, opacity 0.6s, padding 0.6s, font-size 0.6s;
   margin-top: 5%;
-  /*
-  .slideshow-btn {
-      @include WidthHeight(4rem, 4rem);
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-  }
-  .slideshow-left {
-      transform: translate(-50%, -50%) rotate(180deg);
-      left: 3%;
-  }
-  .slideshow-right {
-      right: 3%;
-  }*/
+}
+#container4 .slideshow-wrap * {
+  transition: width 0.6s, height 0.6s, opacity 0.6s, padding 0.6s, font-size 0.6s;
 }
 #container4 .slideshow-wrap .rsvp {
   display: flex;
@@ -338,12 +333,36 @@ html button {
   justify-content: center;
   width: 50%;
   height: 100%;
-  transition: width 0.5s, opacity 0.5s;
+}
+#container4 .slideshow-wrap .rsvp .rsvp-for-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+#container4 .slideshow-wrap .rsvp #invitationWrap {
+  margin: 4vh 0vw;
+}
+#container4 .slideshow-wrap .rsvp #invitationWrap .invitation-name {
+  margin: 1vh 0vw;
+}
+#container4 .slideshow-wrap .rsvp .btn-wrap button {
+  margin: 0vh 2vw;
 }
 #container4 .slideshow-wrap .slideshow-shrink {
   width: 0% !important;
+  height: 0% !important;
+  font-size: 0px !important;
   pointer-events: none;
-  opacity: 0%;
+  opacity: 0% !important;
+  padding: 0% !important;
+}
+#container4 .slideshow-wrap .slideshow-shrink * {
+  width: 0% !important;
+  height: 0% !important;
+  font-size: 0px !important;
+  pointer-events: none;
+  opacity: 0% !important;
+  padding: 0% !important;
 }
 #container4 #nameSelectWrap {
   display: flex;
@@ -393,7 +412,7 @@ html button {
 #container4 #nameSelectWrap .rsvp-name:hover {
   background-color: #bcaf7e;
 }
-#container4 #nameSelectWrap.close-dropdown .country-selection {
+#container4 #nameSelectWrap .hide-name {
   font-size: 0px;
   height: 0px;
   padding: 0px;
