@@ -136,7 +136,6 @@ $(".rsvp-name").on("click", (event) => {
 });
 document.addEventListener("keydown", function(event) {
     if (event.keyCode === 13 && $(":focus").hasClass("rsvp-name")) {
-        console.log($(":focus").attr("data-fam"));
         pullUpInvitation($(":focus").attr("data-fam"));
         $(`#rsvpSlideshow1`).addClass("slideshow-shrink");
         $(`#rsvpSlideshow2`).removeClass("slideshow-shrink");
@@ -151,4 +150,4 @@ $("#backToSearchBtn").on("click", ()=> {
     $(".rsvp-name").addClass("hide-name");
     $("#nameSearch")[0].focus();
     $("#invitationContainer").empty();
-})
+});
