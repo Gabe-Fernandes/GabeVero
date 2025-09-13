@@ -356,6 +356,10 @@ html {
                     }
                 }
             }
+            .invitation-error {
+                padding: 0.5rem;
+                border: 2px solid red;
+            }
             .btn-wrap {
                 button {
                     margin: 0vh 2vw;

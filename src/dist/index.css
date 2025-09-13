@@ -442,6 +442,10 @@ html button {
 #container4 .slideshow-wrap #rsvpSlideshow2 #invitationContainer .invitation-wrap .invitation-guest-name {
   white-space: nowrap;
 }
+#container4 .slideshow-wrap #rsvpSlideshow2 .invitation-error {
+  padding: 0.5rem;
+  border: 2px solid red;
+}
 #container4 .slideshow-wrap #rsvpSlideshow2 .btn-wrap button {
   margin: 0vh 2vw;
 }

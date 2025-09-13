@@ -71,27 +71,34 @@ $(window).scroll( function(){
 });
 
 // RSVP Slideshow
-function createSlideShow(namespace) {
-    const lastPage = $(`.${namespace}`).length;
+function slideshowLeft(namespace) {
     const slideshowWrap = $(`#${namespace}SlideshowWrap`);
-
+    let currentPage = parseInt(slideshowWrap.attr("data-page"));
+    if (currentPage > 1) {
+        $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
+        currentPage--;
+        slideshowWrap.attr("data-page", currentPage);
+        $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
+    }
+}
+function slideshowRight(namespace) {
+    const slideshowWrap = $(`#${namespace}SlideshowWrap`);
+    let currentPage = parseInt(slideshowWrap.attr("data-page"));
+    const lastPage = $(`.${namespace}`).length;
+    if (currentPage < lastPage) {
+        $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
+        currentPage++;
+        slideshowWrap.attr("data-page", currentPage);
+        $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
+    }
+}
+function createSlideShow(namespace) {
+    const slideshowWrap = $(`#${namespace}SlideshowWrap`);
     slideshowWrap.find(".slideshow-left").on("click", ()=> {
-        let currentPage = parseInt(slideshowWrap.attr("data-page"));
-        if (currentPage > 1) {
-            $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
-            currentPage--;
-            slideshowWrap.attr("data-page", currentPage);
-            $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
-        }
+        slideshowLeft(namespace);
     });
     slideshowWrap.find(".slideshow-right").on("click", ()=> {
-        let currentPage = parseInt(slideshowWrap.attr("data-page"));
-        if (currentPage < lastPage) {
-            $(`#${namespace}Slideshow${currentPage}`).addClass("slideshow-shrink");
-            currentPage++;
-            slideshowWrap.attr("data-page", currentPage);
-            $(`#${namespace}Slideshow${currentPage}`).removeClass("slideshow-shrink");
-        }
+        slideshowRight(namespace);
     });
 }
 createSlideShow("rsvp");
@@ -150,9 +157,15 @@ $("#backToSearchBtn").on("click", ()=> {
     $(".rsvp-name").addClass("hide-name");
     $("#nameSearch")[0].focus();
     $("#invitationContainer").empty();
+    $("#invitationContainer").removeClass("invitation-error");
 });
 
 // RSVP pull up rsvp questions
 $("#rsvpQuestionsBtn").on("click", ()=> {
-    
+    if ($(".invitation-checkbox:checked").length === 0) {
+        $("#invitationContainer").addClass("invitation-error");
+        return;
+    }
+    slideshowRight("rsvp");
+    $("#invitationContainer").removeClass("invitation-error");
 });
