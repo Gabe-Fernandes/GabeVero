@@ -137,6 +137,9 @@ function pullUpInvitation(familyName) {
             </div>
         `);
     }
+    $(".invitation-checkbox").on("click", ()=> {
+        $("#invitationContainer").removeClass("invitation-error");
+    });
 }
 $(".rsvp-name").on("click", (event) => {
     pullUpInvitation($(event.target).attr("data-fam"));
