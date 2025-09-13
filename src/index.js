@@ -151,3 +151,8 @@ $("#backToSearchBtn").on("click", ()=> {
     $("#nameSearch")[0].focus();
     $("#invitationContainer").empty();
 });
+
+// RSVP pull up rsvp questions
+$("#rsvpQuestionsBtn").on("click", ()=> {
+    
+});

@@ -363,6 +363,25 @@ html {
             }
         }
         #rsvpSlideshow3 {
+            .question1-wrap {
+                @include Flex-Row(center, center, initial, initial);
+                .col-wrap {
+                    @include Flex-Col(center, center, center, center);
+                    margin: 2vh 2vw;
+                    .rsvp-survey-name {
+                        font-size: 1.2rem;
+                        margin-bottom: 1vh;
+                    }
+                }
+            }
+            .questions2-3-wrap {
+                @include Flex-Row(center, center, center, center);
+                margin: 1vh 0vw;
+                .rsvp-survey-name {
+                    font-size: 1.2rem;
+                    margin-right: 1vw;
+                }
+            }
             .question {
                 text-transform: uppercase;
                 font-size: 1.5rem;

@@ -445,6 +445,38 @@ html button {
 #container4 .slideshow-wrap #rsvpSlideshow2 .btn-wrap button {
   margin: 0vh 2vw;
 }
+#container4 .slideshow-wrap #rsvpSlideshow3 .question1-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .question1-wrap .col-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: center;
+  height: center;
+  margin: 2vh 2vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .question1-wrap .col-wrap .rsvp-survey-name {
+  font-size: 1.2rem;
+  margin-bottom: 1vh;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .questions2-3-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: center;
+  height: center;
+  margin: 1vh 0vw;
+}
+#container4 .slideshow-wrap #rsvpSlideshow3 .questions2-3-wrap .rsvp-survey-name {
+  font-size: 1.2rem;
+  margin-right: 1vw;
+}
 #container4 .slideshow-wrap #rsvpSlideshow3 .question {
   text-transform: uppercase;
   font-size: 1.5rem;
