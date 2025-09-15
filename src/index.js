@@ -133,11 +133,11 @@ function pullUpInvitation(familyName) {
         $("#invitationContainer").append(`
             <div class="invitation-wrap">
                 <input type="checkbox" class="invitation-checkbox">
-                <span>${name}</span>
+                <label class="invitation-name">${name}</label>
             </div>
         `);
     }
-    $(".invitation-checkbox").on("click", ()=> {
+    $(".invitation-checkbox").on("click", ()=> { // clear validation
         $("#invitationContainer").removeClass("invitation-error");
     });
 }
@@ -164,11 +164,72 @@ $("#backToSearchBtn").on("click", ()=> {
 });
 
 // RSVP pull up rsvp questions
+function renderRsvpQuestions(names) {
+    for (let i = 0; i < names.length; i++) {
+        $("#question1Wrap").append(`
+            <div class="col-wrap">
+                <span class="rsvp-survey-name">${names[i]}</span>
+                <div class="check-wrap">
+                    <input type="radio" name="rsvp_${i}" class="rsvp-survey-radio">
+                    <label for="rsvp_${i}" class="rsvp-survey-radio-label">Yes!</label>
+                </div>
+                <div class="check-wrap">
+                    <input type="radio" name="rsvp_${i}" class="rsvp-survey-radio">
+                    <label for="rsvp_${i}" class="rsvp-survey-radio-label">Sorry, can't come.</label>
+                </div>
+            </div>
+        `);
+        $("#question1Wrap").find(".rsvp-survey-radio").on("click", ()=> {
+            $("#question1Wrap").removeClass("invitation-error");
+        });
+        $("#question2Wrap").append(`
+            <div class="questions2-3-wrap">
+                <span class="rsvp-survey-name">${names[i]}</span>
+                <input type="text" class="rsvp-survey-textbox" placeholder="dietary restrictions">
+            </div>
+        `);
+        $("#question3Wrap").append(`
+            <div class="questions2-3-wrap">
+                <span class="rsvp-survey-name">${names[i]}</span>
+                <input type="text" class="rsvp-survey-textbox" placeholder="song">
+            </div>
+        `);
+    }
+}
+function getRsvpQuestionNames() {
+    let names = [];
+    const invitationCheckboxes = $(".invitation-checkbox");
+    for (let i = 0; i < invitationCheckboxes.length; i++) {
+        if (invitationCheckboxes.eq(i).is(":checked")) {
+            const nameSpan = invitationCheckboxes.eq(i).siblings(".invitation-name");
+            names.push(nameSpan.text());
+        }
+    }
+    return names;
+}
 $("#rsvpQuestionsBtn").on("click", ()=> {
+    // validation
     if ($(".invitation-checkbox:checked").length === 0) {
         $("#invitationContainer").addClass("invitation-error");
         return;
     }
+    renderRsvpQuestions(getRsvpQuestionNames());
     slideshowRight("rsvp");
     $("#invitationContainer").removeClass("invitation-error");
+});
+
+// RSVP back to invitation
+$("#backToInvitationBtn").on("click", ()=> {
+    $("#question1Wrap").empty();
+    $("#question2Wrap").empty();
+    $("#question3Wrap").empty();
+    $("#question1Wrap").removeClass("invitation-error");
+});
+
+// Submit RSVP
+$("#submitRsvpBtn").on("click", (event)=> {
+    if ($(".rsvp-survey-radio:checked").length < $(".rsvp-survey-radio").length/2) {
+        event.preventDefault();
+        $("#question1Wrap").addClass("invitation-error");
+    }
 });

@@ -288,6 +288,7 @@ html {
                 font-size: 1.5rem;
                 font-weight: 500;
                 text-align: center; 
+                white-space: nowrap;  
                 margin: 2vh 0vw 4vh;
             }
             #nameSelectWrap {
@@ -336,7 +337,8 @@ html {
                 text-transform: uppercase;
                 font-size: 1.5rem;
                 font-weight: 500;
-                text-align: center;         
+                text-align: center;
+                white-space: nowrap;  
             }
             #invitationContainer {
                 @include Flex-Col(flex-start, center, initial, initial);
@@ -378,8 +380,12 @@ html {
                     }
                 }
             }
+            .invitation-error {
+                padding: 0.5rem;
+                border: 2px solid red;
+            }
             .questions2-3-wrap {
-                @include Flex-Row(center, center, center, center);
+                @include Flex-Col(flex-start, center, initial, initial);
                 margin: 1vh 0vw;
                 .rsvp-survey-name {
                     font-size: 1.2rem;
@@ -391,12 +397,13 @@ html {
                 font-size: 1.5rem;
                 font-weight: 500;
                 margin: 3vh 0vw;
+                white-space: nowrap;  
                 text-align: center;
             }
             .check-wrap {
                 @include Flex-Row(flex-start, center, 100%, initial);
-                margin: 2vh 0vw 1.5 vh 45vw;
-                .rsvp-survey-checkbox {
+                margin: 1vh 0vw;
+                .rsvp-survey-radio {
                     @include WidthHeight(2vw, 2vw);
                     max-width: 2vw;
                     max-height: 2vw;
@@ -404,9 +411,12 @@ html {
                     margin: 0vh 1vw 0vh 0vw;
                     //transition: width 0.4s ease-out, height 0.4s ease-in-out, opacity 0.4s, padding 0.4s, font-size 0.4s, filter 0.25s;
                 }
+                .rsvp-survey-radio-label {
+                    white-space: nowrap;
+                }
             }
             .rsvp-survey-textbox {
-                @include WidthHeight(10vw, 4vh);
+                @include WidthHeight(100%, 4vh);
                 text-indent: 5%;
                 border-radius: 5%;
                 border: none;

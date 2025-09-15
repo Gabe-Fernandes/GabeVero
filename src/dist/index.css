@@ -354,6 +354,7 @@ html button {
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
+  white-space: nowrap;
   margin: 2vh 0vw 4vh;
 }
 #container4 .slideshow-wrap #rsvpSlideshow1 #nameSelectWrap {
@@ -414,6 +415,7 @@ html button {
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
+  white-space: nowrap;
 }
 #container4 .slideshow-wrap #rsvpSlideshow2 #invitationContainer {
   display: flex;
@@ -469,12 +471,17 @@ html button {
   font-size: 1.2rem;
   margin-bottom: 1vh;
 }
+#container4 .slideshow-wrap #rsvpSlideshow3 .invitation-error {
+  padding: 0.5rem;
+  border: 2px solid red;
+}
 #container4 .slideshow-wrap #rsvpSlideshow3 .questions2-3-wrap {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-  width: center;
-  height: center;
+  width: initial;
+  height: initial;
   margin: 1vh 0vw;
 }
 #container4 .slideshow-wrap #rsvpSlideshow3 .questions2-3-wrap .rsvp-survey-name {
@@ -486,6 +493,7 @@ html button {
   font-size: 1.5rem;
   font-weight: 500;
   margin: 3vh 0vw;
+  white-space: nowrap;
   text-align: center;
 }
 #container4 .slideshow-wrap #rsvpSlideshow3 .check-wrap {
@@ -494,9 +502,9 @@ html button {
   align-items: center;
   width: 100%;
   height: initial;
-  margin: 2vh 0vw 1.5 vh 45vw;
+  margin: 1vh 0vw;
 }
-#container4 .slideshow-wrap #rsvpSlideshow3 .check-wrap .rsvp-survey-checkbox {
+#container4 .slideshow-wrap #rsvpSlideshow3 .check-wrap .rsvp-survey-radio {
   width: 2vw;
   height: 2vw;
   max-width: 2vw;
@@ -504,8 +512,11 @@ html button {
   background: #fafaf8;
   margin: 0vh 1vw 0vh 0vw;
 }
+#container4 .slideshow-wrap #rsvpSlideshow3 .check-wrap .rsvp-survey-radio-label {
+  white-space: nowrap;
+}
 #container4 .slideshow-wrap #rsvpSlideshow3 .rsvp-survey-textbox {
-  width: 10vw;
+  width: 100%;
   height: 4vh;
   text-indent: 5%;
   border-radius: 5%;
